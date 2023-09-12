@@ -1,5 +1,5 @@
 import copy
-
+import math
 
 def initial_state():
     return ((7, 2, 4, 5, 0, 6, 8, 3, 1), 1, 1)
@@ -51,4 +51,26 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    return 0
+    res = 0
+    for idx in range(0,9):
+        num=board[idx]
+        #print("get num")
+        if num !=0:
+            print('hay')
+            row=math.floor(idx/3)
+            col=math.floor(idx%3)
+            #print("get row and col")
+            goalIdxRow = math.floor((num-1)/3)
+            goalIdxCol = (num-1)%3
+            
+            x=abs(row - goalIdxRow)
+            y=abs(col-goalIdxCol)
+            print(goalIdxRow,goalIdxCol)
+            print(num)
+            res += (x+y)
+           
+        
+
+    return res
+
+#print(h3(initial_state()))

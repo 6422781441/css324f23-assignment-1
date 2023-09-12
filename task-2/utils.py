@@ -13,3 +13,4 @@ def print_solution(n):
         n = n[1]
     for s in r:
         print(s)
+
